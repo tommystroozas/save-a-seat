@@ -1,0 +1,14 @@
+== README
+
+Save-A-Seat
+====================
+
+Items completed for the initial commit:
+
+* Generate base app
+
+* Removed turbolinks
+
+* Install/configure devise
+
+* Generated 'static_pages' controller & views for static pages if we need them, and for testing/configuration purposes.
