@@ -4,23 +4,29 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name %>
   </div>
+
+  <br>
   
-  <div><%= f.label :is_female, "Female" %>
-  <%= f.radio_button :is_female, '1' %>
-  <%= f.label :is_female, "Male" %>
-  <%= f.radio_button :is_female, '0' %>
+  <div><%= f.label :is_female, "Female" %> <%= f.radio_button :is_female, '1' %>
+  <%= f.label :is_female, "Male" %> <%= f.radio_button :is_female, '0' %>
   </div>
+
+  <br>
 
   <div><%= f.label :date_of_birth %><br />
     <%= f.date_select :date_of_birth, { :start_year => 1920, :end_year => 2015 } %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
+
+  <br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -31,15 +37,21 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :current_password %> <i>(enter your current password to confirm your changes!)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+
+  <br>
 
   <div class="actions">
     <%= f.submit "Update" %>
