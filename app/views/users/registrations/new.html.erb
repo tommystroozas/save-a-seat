@@ -1,0 +1,54 @@
+<h2>Register</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <br>
+  
+  <div><%= f.label :is_female, "Female" %> <%= f.radio_button :is_female, '1' %>
+  <%= f.label :is_female, "Male" %> <%= f.radio_button :is_female, '0' %>
+  </div>
+
+  <br>
+
+  <div><%= f.label :date_of_birth %><br />
+    <%= f.date_select :date_of_birth, { :start_year => 1920, :end_year => 2015 } %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+  <br>
+
+<% end %>
