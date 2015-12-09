@@ -14,23 +14,28 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Chatty App</span>
+          <span class="sr-only">Save-A-Seat</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Chatty App</a>
+        <a class="navbar-brand" href="/">Save-A-Seat</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
-              <li>
-                <a href="/users/sign_in">Signin</a>
-              </li>
-              <li>
-                <a href="/users/sign_up">Signup</a>
-              </li>
-          <li><a href="http://josephndungu.com/tutorials/gmail-like-chat-application-in-ruby-on-rails">Tutorial Link</a></li>
+          <%- if user_signed_in? %>
+            <li>
+              <a href="/users/sign_in">Signin</a>
+            </li>
+            <li>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            </li>
+          <%- else %>
+            <li>
+              <a href="/users/sign_up">Signup</a>
+            </li>
+          <%- end %>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -43,7 +48,7 @@
   <p class="alert"><%= alert %></p>
 
   <% if current_user %>
-    <em>Welcome, <%= current_user.email %>!</em> <br><br> <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <em>Welcome, <%= current_user.email %>!</em> <br><br> 
   <% else %>
     <%= link_to 'Login', new_user_session_path %>
   <% end %>
