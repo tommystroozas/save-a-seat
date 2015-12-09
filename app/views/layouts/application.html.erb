@@ -7,17 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- nav bar -->
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<% if current_user %>
-  <em>Welcome, <%= current_user.email %>!</em> <br><br> <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
+  <% if current_user %>
+    <em>Welcome, <%= current_user.email %>!</em> <br><br> <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
