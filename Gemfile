@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 # Use Devise for authentication
+gem 'private_pub'
+gem 'thin'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
