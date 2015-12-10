@@ -43,15 +43,21 @@
     <!-- /.container -->
   </nav>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-10'>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-  <% if current_user %>
-    <em>Welcome, <%= current_user.email %>!</em>
-    <%= link_to 'Edit Profile',edit_user_registration_path %> | 
-  <% end %>
+        <% if current_user %>
+          <em>Welcome, <%= current_user.email %>!</em>
+          <%= link_to 'Edit Profile',edit_user_registration_path %> | 
+        <% end %>
 
-  <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
